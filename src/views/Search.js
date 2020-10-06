@@ -29,7 +29,7 @@ function Search() {
   }, [products])
 
   function getData(value) {
-    dispatch(getProducts(value))
+    window.location.href = '/items?search=' + value
   }
 
   function paginate(value){

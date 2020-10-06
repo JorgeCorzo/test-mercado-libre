@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import SearchingBar from '../components/SearchingBar';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import { getDetails } from '../redux/actions/setDetails';
 import { getDescription } from '../redux/actions/setDescription';
 
 function Description() {
   const dispatch = useDispatch();
   const match = useRouteMatch();
-  let history = useHistory();
   const [separator] = useState('>')
   const [categories, setCategories] = useState([])
   const [item_details, setItemDetails] = useState([])
@@ -33,11 +32,7 @@ function Description() {
   }, [details, description])
 
   function getData(value) {
-    return new Promise((resolve, reject) => {
-      resolve(history.push({
-        pathname: `/itemssearch/${value}`
-      }));
-    })
+    window.location.href = '/items?search=' + value
   }
 
   function toCurrency(value) {
