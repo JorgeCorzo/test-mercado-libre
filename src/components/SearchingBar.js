@@ -20,10 +20,10 @@ function SearchingBar(props) {
 
   return (
     <div className="row no-gutters width-100 center-h">
-      <div className="col-2 col-sm-2 center-v">
+      <div className="col-2 col-sm-2 col-md-2 col-lg-1 center-v">
         <Link to="/" className="img-logo" />
       </div>
-      <div className="col-9 col-sm-7 center-v relative">
+      <div className="col-9 col-sm-7 col-md-7 col-lg-8 center-v relative">
         <input type="text" placeholder="Nunca dejes de buscar" id="border-not" className="input-search" onKeyPress={setSearch} ref={txtInput}></input>
         <button className="btn-search" id="border-not" onClick={setBtnSearch}/>
       </div>
